@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+@{
+    Layout = string.Empty;
+}
+<head>
+    <title>FirebaseChat</title>
+    <!-- Encoding -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- Misc -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Style Sheets -->
+    <!--
+        font-awesomeとbootstrapのcssはバンドル対象外とする。
+        というのもバンドルの都合上、相対パスを解決しようとしてwwwrootではなく、
+        プロジェクトcssのディレクトリをベースとしてしまうため、リソース取得時に404エラーが発生してしまう。
+    -->
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <link href="~/css/font-awesome.css" rel="stylesheet">
+    <link href="~/css/Vendor.css" rel="stylesheet">
+    <environment include="Development">
+    </environment>
+    <environment exclude="Development">
+    </environment>
+</head>
+
+<body class="login">
+    <div>
+        <div class="login_wrapper">
+            <div class="form login_form">
+                <section class="login_content">
+                    <form onsubmit="return false;">
+                        <h1>Sign Up Form</h1>
+                        <div>
+                            <input type="text" class="form-control fc-component" placeholder="Email" required="" data-bind="SignUp.Email"/>
+                        </div>
+                        <div>
+                            <input type="password" class="form-control fc-component" placeholder="Password" required="" data-bind="SignUp.Password" />
+                        </div>
+                        <div>
+                            <button class="btn btn-default submit fc-component" data-bind="SignUp.BtnSignUp">Sign Up</button>
+                            <a class="reset_pass" href="#">Lost your password?</a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <p class="change_link">
+                                New to site?
+                                <a href="SignIn" class="to_register"> Already have my account </a>
+                            </p>
+
+                            <div class="clearfix"></div>
+                            <br />
+
+                            <div>
+                                <h1><i class="fa fa-paw"></i> Firebase Chat</h1>
+                                <p>©2018 All Rights Reserved. Firebase Chat</p>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <script src="~/js/Infra.js"></script>
+    <script src="~/js/App.js"></script>
+    <script>
+        window.SignUpViewModel = new FirebaseChat.App.Auth.SignUpViewModel();
+    </script>
+</body>
+</html>

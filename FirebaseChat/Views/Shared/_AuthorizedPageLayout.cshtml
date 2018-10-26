@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>FirebaseChat</title>
+    <!-- Encoding -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- Misc -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Style Sheets -->
+    <!--
+        font-awesomeとbootstrapのcssはバンドル対象外とする。
+        というのもバンドルの都合上、相対パスを解決しようとしてwwwrootではなく、
+        プロジェクトcssのディレクトリをベースとしてしまうため、リソース取得時に404エラーが発生してしまう。
+    -->
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <link href="~/css/font-awesome.css" rel="stylesheet">
+    <link href="~/css/Vendor.css" rel="stylesheet">
+    <environment include="Development">
+    </environment>
+    <environment exclude="Development">
+    </environment>
+</head>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <partial name="_SideMenu" />
+            </div>
+            <partial name="_TopNavigationBar" />
+            <div class="right_col" role="main">
+                @RenderBody()
+            </div>
+            <partial name="_Footer" />
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <script src="~/js/Vendor.js"></script>
+    <script src="~/js/Infra.js"></script>
+    <script src="~/js/App.js"></script>
+
+    <environment include="Development">
+    </environment>
+    <environment exclude="Development">
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

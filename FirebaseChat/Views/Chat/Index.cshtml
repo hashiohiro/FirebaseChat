@@ -1,0 +1,32 @@
+﻿<div>
+    <div class="page-title">
+        <div class="title_left">
+            <h3>Group Chat</h3>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="x_panel">
+            <div class="x_content">
+                <div class="col-xs-12">
+                    <div>
+                        <ul data-bind="Chat.MessageList" class="messages fc-component"></ul>
+                        <form class="form-horizontal form-label-left">
+                            <div class="input-group">
+                                <input type="text" class="form-control fc-component" data-bind="Chat.Message">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary fc-component" data-bind="Chat.BtnSend">Send</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            window.ChatViewModel = new FirebaseChat.App.Chat.ChatViewModel();
+        };
+    </script>
+</div>

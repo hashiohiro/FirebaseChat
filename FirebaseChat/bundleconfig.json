@@ -1,0 +1,51 @@
+[
+  {
+    "outputFileName": "wwwroot/css/Vendor.css",
+    "inputFiles": [
+      "Vendors/nprogress/nprogress.css",
+      "Vendors/bootstrap-daterangepicker/daterangepicker.css",
+      "Vendors/gentelella/custom.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/Vendor.js",
+    "inputFiles": [
+      "Vendors/jquery/dist/jquery.min.js",
+      "Vendors/bootstrap/dist/js/bootstrap.min.js",
+      "Vendors/fastclick/lib/fastclick.js",
+      "Vendors/nprogress/nprogress.js",
+      "Vendors/Chart.js/dist/Chart.min.js",
+      "Vendors/jquery-sparkline/dist/jquery.sparkline.min.js",
+      "Vendors/Flot/jquery.flot.js",
+      "Vendors/Flot/jquery.flot.pie.js",
+      "Vendors/Flot/jquery.flot.time.js",
+      "Vendors/Flot/jquery.flot.stack.js",
+      "Vendors/Flot/jquery.flot.resize.js",
+      "Vendors/flot.orderbars/js/jquery.flot.orderBars.js",
+      "Vendors/flot-spline/js/jquery.flot.spline.min.js",
+      "Vendors/flot.curvedlines/curvedLines.js",
+      "Vendors/DateJS/build/date.js",
+      "Vendors/moment/min/moment.min.js",
+      "Vendors/bootstrap-daterangepicker/daterangepicker.js",
+      "Vendors/gentelella/custom.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/Infra.js",
+    "inputFiles": [
+      "Scripts/Infra/Global/FirebaseInitializer.js",
+      "Scripts/Infra/*.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/App.js",
+    "inputFiles": [
+      "Scripts/App/**/*.js"
+    ]
+  }
+]

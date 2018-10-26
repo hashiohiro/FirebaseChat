@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>FirebaseChat</title>
+    <!-- Encoding -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- Misc -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Style Sheets -->
+    <!--
+        font-awesomeとbootstrapのcssはバンドル対象外とする。
+        というのもバンドルの都合上、相対パスを解決しようとしてwwwrootではなく、
+        プロジェクトcssのディレクトリをベースとしてしまうため、リソース取得時に404エラーが発生してしまう。
+    -->
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <link href="~/css/font-awesome.css" rel="stylesheet">
+    <link href="~/css/Vendor.css" rel="stylesheet">
+    <environment include="Development">
+    </environment>
+    <environment exclude="Development">
+    </environment>
+</head>
+<body>
+    @RenderBody();
+
+    <!-- Scripts -->
+    <script src="~/js/Vendor.js"></script>
+
+    <environment include="Development">
+    </environment>
+    <environment exclude="Development">
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
